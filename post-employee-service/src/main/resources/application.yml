@@ -39,3 +39,23 @@ grpc:
            negotiation-type: plaintext
 
 
+---
+spring:
+  boot:
+    admin:
+      api-path: /instances
+      url: http://localhost:7070/postemployeeservice
+      client:
+        url: http://localhost:7070/postemployeeservice
+
+
+---
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    health:
+      show-details: always

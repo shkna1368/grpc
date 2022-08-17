@@ -1,6 +1,7 @@
 package com.kurdestanbootcamp.postemployeeservice;
 
 
+import de.codecentric.boot.admin.server.config.EnableAdminServer;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.springframework.boot.CommandLineRunner;
@@ -11,6 +12,7 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 @EnableFeignClients
+@EnableAdminServer
 
 public class Application implements CommandLineRunner {
 
