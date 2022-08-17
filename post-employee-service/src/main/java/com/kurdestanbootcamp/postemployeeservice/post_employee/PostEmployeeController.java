@@ -1,6 +1,13 @@
 package com.kurdestanbootcamp.postemployeeservice.post_employee;
 
+import com.kurdestanbootcamp.postemployeeservice.EmployeeRequest;
+import com.kurdestanbootcamp.postemployeeservice.EmployeeResponse;
+import com.kurdestanbootcamp.postemployeeservice.GEmployeeServiceGrpc;
+import com.kurdestanbootcamp.postemployeeservice.employee_client.EmployeeClient;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +19,8 @@ import java.util.Map;
 @RequestMapping(value = "/post-employee/")
 @AllArgsConstructor
 public class PostEmployeeController {
+
+
 
     private final IPostEmployeeService service;
     private PostEmployeeMapper mapper;
@@ -31,6 +40,13 @@ public class PostEmployeeController {
 
         return ResponseEntity.ok(service.getById(id));
     }
+
+
+
+
+
+
+
     @GetMapping("/v1")
     public ResponseEntity<List<PostEmployeeDTO>> getAll(){
 
